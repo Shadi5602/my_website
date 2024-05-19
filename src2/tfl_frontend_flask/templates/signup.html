@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Login - TFL Cycling and Weather Data Portal{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>new user sign up</h2>
+            <p>Please fill new user details</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-2 text-center">
+            <div class="input-group">
+                <form action="/signup/verify" method="POST">
+                    <input type="text" class="form-control mb-2" placeholder="Username" name="email">
+                    <input type="password" class="form-control mb-2" placeholder="Password" name="password">
+                    <button type="submit" class="btn btn-primary mb-1">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p style="color: {{text_color}};">{{ details_message }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p>Already a member? <a href="/login">Login</a></p>
+        </div>
+    </div>
+
+{% endblock %}

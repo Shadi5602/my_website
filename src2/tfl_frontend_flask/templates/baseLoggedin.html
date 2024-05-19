@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TFL Cycling and Weather Data Portal - Logged In{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <style>
+        .logo {
+            text-align: center;
+            margin-top: 50px; 
+            color: red;
+            font-size: 36px; 
+            font-weight: bold;
+        }
+        /* Custom styles to override Bootstrap navbar styles */
+        .navbar {
+            background-color: lightslategray !important; /* Set background color to blue */
+            color: white; /* Set text color to white */
+        }
+        .navbar .navbar-nav .nav-link {
+            color: white; /* Set link text color to white */
+        }
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .form-row p {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand">TFL Data Portal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/loggedin">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="create_chart_navbar" class="nav-link" href="/createchart">Create a chart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="view_charts_navbar" class="nav-link" href="/viewSelection">View my charts</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/logout">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

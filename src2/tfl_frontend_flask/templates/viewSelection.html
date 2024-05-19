@@ -1,0 +1,44 @@
+{% extends "baseLoggedin.html" %}
+
+
+{% block content %}
+<div class="row justify-content-center">
+
+        <div class="col-md-0 text-center">
+            <h2>Hello {{email}}, select a figure you would like to view</h2>
+        </div>
+
+        <div class="col-md-2 text-center">
+            <div class="input-group">
+                <form action="/viewchart" method="POST">
+                    <select id="select_chart" name="fig_id">
+                        <option value="" disabled selected>Select chart...</option>
+                        {% for chart in charts %}
+                            <option value="{{ chart['id'] }}">{{ chart['name'] }} (id:{{ chart['id'] }})</option>
+                        {% endfor %}
+                    </select>
+                    <div class="row justify-content-center">
+                        <p></p>
+                        <button id="view_now_button" type="submit" class="btn btn-primary mb-2">View Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <p id="user-message" style="color: red;">{{ details_message }}</p>
+    </div>
+</div>
+{% if img %}
+<div id="chart_image" class="container">
+    <div class="row">
+        <div class="col-md-0 text-center">
+            <img id="chart_image" src="{{ url_for('uploaded_file', filename='plot.png') }}" alt="Plot 1">
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

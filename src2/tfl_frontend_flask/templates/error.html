@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFL Cycling and Weather Data Portal - Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <style>
+        .logo {
+            text-align: center;
+            margin-top: 50px; 
+            color: red;
+            font-size: 36px; 
+            font-weight: bold;
+        }
+        /* Custom styles to override Bootstrap navbar styles */
+        .navbar {
+            background-color: lightslategray !important; /* Set background color to blue */
+            color: white; /* Set text color to white */
+        }
+        .navbar .navbar-nav .nav-link {
+            color: white; /* Set link text color to white */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand">TFL Data Portal</a>      
+        </div>
+    </nav>
+    <div>
+        <h1 style = "color: rgb(163, 163, 37);">Warning: It doesn't seem possible to communicate with the TFL API. </h1>
+        <p>Ensure the API is running and the correct API PORT is specified in __init__.py. This is necessary for this platform to run. Refresh the page to retry. </p>
+
+    </div>
+
+</body>
+</html>

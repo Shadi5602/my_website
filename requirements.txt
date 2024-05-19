@@ -1,0 +1,15 @@
+Flask
+Flask-SQLAlchemy
+Flask-Marshmallow
+marshmallow-sqlalchemy
+pandas
+bcrypt
+requests
+matplotlib
+numpy
+#for testing:
+chromedriver
+pytest
+pytest-cov
+selenium
+pytest-flask

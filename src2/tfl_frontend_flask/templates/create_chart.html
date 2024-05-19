@@ -1,0 +1,64 @@
+{% extends "baseLoggedin.html" %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-0 text-center">
+            <h2>Hello {{email}}, create a cycling data chart below</h2>
+            <p>Charts will show the effect of the selected x-axis variable on the number of bicylces hired through the TFL Santander Cycle Rental Scheme, throughout the time-period specified.  </p>
+            <p>Enter dates in DD/MM/YYYY format. Note data is available from 30/07/2010 to 30/09/2023</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-5 text-center">
+            <div class="form-row">
+                <form action="/createchart/chartdetails" method="POST">
+                    <input id="figure_name" type="text" class="form-control mb-2" placeholder="Figure name" name="name">
+                    <input id="start_date" type="text" class="form-control mb-2" placeholder="Start date" name="start_date" id="start_date">
+                    <input id="end_date" type="text" class="form-control mb-2" placeholder="End date" name="end_date" id="end_date">
+                    <button id="create_chart_buttom" type="button" onclick="FillDates()" >Fill All Time Dates</button>
+                    <div class="form-row">
+                        <p>Select x-axis data:</p>
+                        <select id="data_type" name="data_type">
+                            <option value="" disabled selected>Select an option...</option>
+                            <option value="1">Temperature</option>
+                            <option value="0">Precipitation</option>
+                        </select>
+                    </div>
+                    <p style="font-size: 14px;color:brown">Y-axis is assigned the number of bicyle hires (corresponding to the details entered).</p>
+                    <div class="form-row">
+                        <p>Select plot type:</p>
+                        <select id="chart_type" name="plot_type">
+                            <option value="" disabled selected>Select an option...</option>
+                            <option value="1">Scatter plot</option>
+                            <option value="0">Best-fit line plot</option>
+                        </select>
+                    </div>
+                    
+                    <div class="row justify-content-center">
+                        <button id="create_button" type="submit" class="btn btn-primary mb-1">Create</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <p id="user-message" style="color: {{ message_color }};">{{ details_message }}</p>
+    </div>
+</div>
+
+<script>
+    function FillDates() {
+        var StartDate = "30/07/2010";
+        var EndDate = "30/09/2023"
+        document.getElementById("start_date").value = StartDate;
+        document.getElementById("end_date").value = EndDate;
+    }
+</script>
+
+{% endblock %}

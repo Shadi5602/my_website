@@ -1,0 +1,31 @@
+[project]
+name = "comp0034-CW2"
+version = "1.0.0"
+description = "London Cycling and Weather Data Web Page"
+dependencies = [
+    "flask",
+    "Flask-SQLAlchemy",
+    "Flask-Marshmallow",
+    "marshmallow-sqlalchemy",
+    "pandas",
+    "pytest",
+    "pyarrow"
+]
+
+# https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+[build-system]
+requires = [
+    "setuptools",
+    "setuptools-scm",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src1","src2"]  # package names should match these glob patterns (["*"] by default)
+exclude = ["tests*"]  # exclude packages matching these glob patterns (empty by default)
+namespaces = false  # to disable scanning PEP 420 namespaces (true by default)
+
+# https://docs.pytest.org/en/stable/reference/customize.html#pyproject-toml
+[tool.pytest.ini_options]
+addopts = "--verbose"
+testpaths = ["tests",]

@@ -1,0 +1,20 @@
+{% extends "baseLoggedin.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="logo" id = "welcome-text">
+          <h2>Welcome to the Transport for London (TFL) Data Portal, {{ email }}!</h2>
+    </div>
+  <div style="text-align: center;">
+    <h2 style="font-size: 28.5px;">
+        Providing clients with reliable cycling data, statistics, and chart production
+    </h2>
+    
+    <img src="/static/img/santander_cycles.jpg" height="480" width="950">
+    <p style="font-size: large;">Logged in user:  {{email}}. Not you? <a href="/logout">Logout.</a> </p>
+  </div>
+  
+</div>
+
+{% endblock %}

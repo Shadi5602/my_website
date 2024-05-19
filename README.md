@@ -4,7 +4,7 @@ GITHUB Link: https://github.com/ucl-comp0035/comp0034-cw2i-Shadi5602.git
 Before beginning , it is important to note:
 *in order to access the application, both the REST API (src1) and the front-end application (src2) flask apps must be running.* 
 
-1. Begin by creating a virtual enviornment, installing requirements.txt (pip install -r requirements.txt), and running (pip install -e .)
+1. ABegin by creating a virtual enviornment, installing requirements.txt (pip install -r requirements.txt), and running (pip install -e .)
 
 2. Open *two* terminal windows. One will be used for running the rest api and one for the front-end application. 
 
